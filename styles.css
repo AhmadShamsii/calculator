@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: Alexandria, sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: azure;
+  background-color: #ffffff;
+}
+.container {
+  width: 50rem;
+  height: 60rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f48c06;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 0.9fr;
+  grid-template-areas:
+    'form form form form'
+    'ops ops ops ops'
+    'nums nums nums equal';
+}
+.container > * {
+  padding: 2rem 3.5rem;
+}
+.form {
+  background-color: #faa307;
+  grid-area: form;
+  border: 1px solid #ffba08;
+  height: 10rem;
+  width: 100%;
+  text-align: right;
+  font-size: 5rem;
+}
+.operations {
+  grid-area: ops;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.operations > * {
+  background-color: #f48c06;
+
+  border: 2px solid #f7c663;
+  padding: 0rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.operations > *:active {
+  transform: scale(0.9);
+}
+.numbers {
+  grid-area: nums;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.numbers > * {
+  background-color: #f48c06;
+
+  border: 2px solid #f7c663;
+  padding: 1.2rem 3rem;
+  text-align: center;
+  font-weight: 300;
+  transition: 0.3s ease-in-out;
+}
+.numbers > *:active {
+  transform: scale(0.9);
+}
+.equal {
+  background-color: #faa307;
+  margin: 2rem 1.7rem 2rem 0rem;
+  position: relative;
+  left: -1.7rem;
+
+  grid-area: equal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.equal:active {
+  transform: scale(0.9);
+}
+.btn {
+  cursor: pointer;
+}
